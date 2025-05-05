@@ -41,7 +41,9 @@ This Flutter application lets users:
 - [Flutter SDK](https://flutter.dev/docs/get-started/install)  (3.0 or higher)  
 - A device or emulator (Android/iOS)  
 
-### Installation
+### Installation![bmi1](https://github.com/user-attachments/assets/34c22381-349a-4665-9a32-![bmi2](https://github.com/user-attachments/assets/cdc99fee-dc88-4426-9819-32de4b8394a5)
+1df44ed500c5)
+
 
 1. **Clone** the repo  
    ```bash
