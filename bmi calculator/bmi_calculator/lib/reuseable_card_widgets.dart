@@ -1,21 +1,28 @@
 import 'package:flutter/material.dart';
 
 class ReuseableContainer extends StatelessWidget {
-  final Color colorr; //Color(0xFF1D1E33),
+  const ReuseableContainer({
+    super.key,
+    required this.colorr,
+    required this.cardWidget,
+    this.onPress,
+  });
+
+  final Color colorr;
   final Widget cardWidget;
-  final Function onPress;
-  ReuseableContainer({@required this.colorr, this.cardWidget, this.onPress});
+  final VoidCallback? onPress;
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: onPress,
       child: Container(
-        child: cardWidget,
-        margin: EdgeInsets.all(15.0),
+        margin: const EdgeInsets.all(15.0),
         decoration: BoxDecoration(
           color: colorr,
           borderRadius: BorderRadius.circular(10.0),
         ),
+        child: cardWidget,
       ),
     );
   }
