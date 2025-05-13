@@ -356,8 +356,11 @@ Create a new branch (git checkout -b feature/your-feature).
 Make your changes and commit (git commit -m "Add your feature").
 
 
+![Capture](https://github.com/user-attachments/assets/0bab3661-b10c-461f-9b4c-4abd30029334)
 
 Push to your branch (git push origin feature/your-feature).
+
+
 
 
 
