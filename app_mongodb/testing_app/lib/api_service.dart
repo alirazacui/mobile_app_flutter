@@ -1,14 +1,22 @@
+import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'package:fluttertoast/fluttertoast.dart';
 
 class ApiService {
-  // Use localhost for web testing on the same machine
-  static const String baseUrl = 'http://localhost:3000';
-  
+  static String get baseUrl {
+    if (kIsWeb) {
+      return 'http://localhost:3000'; // For web (Edge)
+    } else {
+      return 'http://192.168.43.70:3000'; // For mobile (replace with your actual IP)
+    }
+  }
+
   // Error handling wrapper
-  static Future<http.Response> _handleRequest(Future<http.Response> request) async {
+  static Future<http.Response> _handleRequest(
+    Future<http.Response> request,
+  ) async {
     try {
       final response = await request;
       if (response.statusCode >= 200 && response.statusCode < 300) {
@@ -26,7 +34,7 @@ class ApiService {
   // Get all users
   static Future<List<dynamic>> getData() async {
     final response = await _handleRequest(
-      http.get(Uri.parse('$baseUrl/users'))
+      http.get(Uri.parse('$baseUrl/users')),
     );
     return jsonDecode(response.body)['data'];
   }
@@ -38,7 +46,7 @@ class ApiService {
         Uri.parse('$baseUrl/users'),
         headers: {'Content-Type': 'application/json'},
         body: jsonEncode({'name': name, 'email': email}),
-      )
+      ),
     );
   }
 
@@ -49,7 +57,7 @@ class ApiService {
       toastLength: Toast.LENGTH_LONG,
       backgroundColor: Colors.red[800],
       textColor: Colors.white,
-      fontSize: 16.0
+      fontSize: 16.0,
     );
   }
 }
