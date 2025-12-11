@@ -49,3 +49,11 @@ This Flutter application lets users:
    ```bash
    git clone https://github.com/your-username/bmi_calculator_flutter.git
    cd bmi_calculator_flutter
+![bmi1](https://github.com/user-attachments/assets/599c4874-5b99-4152-b184-b48c973a67c9)
+![bmi2](https://github.com/user-attachments/assets/9cedbe7e-4b8f-486d-b197-a540c627a1a8
+
+
+
+
+
+   
